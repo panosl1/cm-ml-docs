@@ -105,7 +105,7 @@ For this example, do the following:
 
 ![New model (top)](images/new-model-top-half.jpg)
 
-If your system does not have a GPU select the `Torch` tab instead of `Caffe`.
+_**If your system does not have a GPU select the `Torch` tab instead of `Caffe`.**_
 
 ![New model (bottom)](images/new-model-bottom-half.jpg)
 
