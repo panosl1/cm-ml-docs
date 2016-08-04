@@ -1,16 +1,14 @@
 # Getting Started
 
-Now that you have successfully installed DIGITS, this guide will teach you the basics of how to use it.
-By the end, you will have trained a Caffe model to recognize hand-written digits.
+This is an example workflow to train a Caffe model to recognize hand-written digits.
 We will be using the [MNIST handwritten digit database](http://yann.lecun.com/exdb/mnist) as our dataset and [LeNet-5](http://yann.lecun.com/exdb/lenet/) for our network.
 Both are generously made available by Yann LeCun on [his website](http://yann.lecun.com/).
 
 ## Download the data
 
-Use the following command to download the MNIST dataset onto your server
-(for Deb package installations, the script is at `/usr/share/digits/tools/download_data/main.py`):
+Use the following command to download the MNIST dataset onto your server:
 ```sh
-$ $DIGITS_HOME/tools/download_data/main.py mnist ~/mnist
+$ /cm/shared/apps/digits/4.0/tools/download_data/main.py mnist ~/mnist
 Downloading url=http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz ...
 Downloading url=http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz ...
 Downloading url=http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz ...
@@ -27,12 +25,30 @@ Dataset directory is created successfully at '/home/username/mnist'
 Done after 16.722807169 seconds.
 ```
 
-See [Standard Datasets](StandardDatasets.md) for details about this script.
+## Set the default Matplotlib backend:
+
+Edit /cm/shared/apps/cm-ml-pythondeps/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc
+
+and chnage:
+
+```backend      : gtk3agg```
+
+to
+
+```backend      : agg```
 
 ## Using the Webapp
 
+
+
+Start the DIGITS server:
+
+```module load shared digits```
+```cd /cm/shared/apps/digits/4.0```
+```[root@gtc16-demo 4.0]# ./digits-devserver```
+
 Open up a web browser and navigate to the home screen of DIGITS.
-The server should be at either `http://localhost/` (if installed from Deb packages), `http://localhost:5000/` (if using `digits-devserver`) or `http://localhost:34448/` (if using `digits-server`).
+The server should be at either `http://localhost/` , `http://localhost:5000/` (if using `digits-devserver`) or `http://localhost:34448/` (if using `digits-server`). You can also use the external IP of the system instead of localhost.
 
 ![Home page](images/home-page-1.jpg)
 
