@@ -43,9 +43,16 @@ to
 
 Start the DIGITS server:
 
-```module load shared digits```
+```module load shared digits```  
+
+
+
 ```cd /cm/shared/apps/digits/4.0```
+
+
 ```[root@gtc16-demo 4.0]# ./digits-devserver```
+
+
 
 Open up a web browser and navigate to the home screen of DIGITS.
 The server should be at either `http://localhost/` , `http://localhost:5000/` (if using `digits-devserver`) or `http://localhost:34448/` (if using `digits-server`). You can also use the external IP of the system instead of localhost.
