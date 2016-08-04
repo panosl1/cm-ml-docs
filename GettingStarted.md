@@ -104,6 +104,9 @@ For this example, do the following:
 * Click on the `Create` button
 
 ![New model (top)](images/new-model-top-half.jpg)
+
+If your system does not have a GPU select the `Torch` tab instead of `Caffe`.
+
 ![New model (bottom)](images/new-model-bottom-half.jpg)
 
 While training the model, you should see the expected completion time on the right side:
