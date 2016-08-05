@@ -39,12 +39,12 @@ to
 
 ## Create a working directory
 
-```/tmp/digits/jobs```
+``` /tmp/digits/jobs ```
 
 
 The path can be changed in:
 
-```/cm/shared/apps/digits/current/digits/digits.cfg```
+``` /cm/shared/apps/digits/current/digits/digits.cfg ```
 
 
 ## Using the Webapp
