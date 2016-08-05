@@ -29,13 +29,23 @@ Done after 16.722807169 seconds.
 
 Edit /cm/shared/apps/cm-ml-pythondeps/lib64/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc
 
-and chnage:
+and change:
 
 ```backend      : gtk3agg```
 
 to
 
 ```backend      : agg```
+
+## Create a working directory
+
+```/tmp/digits/jobs```
+
+
+The path can be changed in:
+
+```/cm/shared/apps/digits/current/digits/digits.cfg```
+
 
 ## Using the Webapp
 
