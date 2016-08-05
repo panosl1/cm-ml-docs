@@ -39,7 +39,7 @@ to
 
 ## Create a working directory
 
-``` /tmp/digits/jobs ```
+``` mkdir -p /tmp/digits/jobs ```
 
 
 The path can be changed in:
