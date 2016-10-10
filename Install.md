@@ -17,6 +17,7 @@ cudnn | A GPU-accelerated library of primitives for deep neural networks.
 cub |  Reusable software components for CUDA
 nccl | (pronounced "Nickel") A stand-alone library of standard collective communication routines, such as all-gather, reduce, broadcast, etc., that have been optimized to achieve high bandwidth over PCIe. 
 mlpython | MLPython is a library for organizing machine learning research.
+DIGITS | A web frontend to Caffe and Torch developed by NVIDIA
 
 The following package will be added in the future:
 
@@ -46,6 +47,27 @@ The only RPM that needs to be installed on the headnode is cm-ml-distdeps. This 
 yum install --installroot=/cm/images/gpu-image cm-ml-distdeps
 
 ```
+
+You will need to repeat the above command for all software images that will be used to run Machine Learning applications.
+
+### For the headnode
+
+The Bright Cluster Manager Machine learning packages have proper RPM dependencies defined. This means that the cluster administrator does not need to spend time figuring out what needs to be installed.
+
+For example, if the administrator wants to install NVIDIA DIGITS, all that has to be done is to run the command:
+
+```
+
+yum install digits
+yum install <name of desired package>
+
+```
+
+on the headnode. YUM will automaticall install cm-ml-pythondeps, cm-ml-distdeps, cudnn, caffe, torch and cuda75-toolkit as dependencies. These RPMs get installed in the /cm/shared directory, which is exported over NFS and therefore are available to all the compute nodes. This allows the installation of the Machine Learning libraries within minutes, instead of days that it typically takes to build and install all the necessary dependencies.
+
+### Friendly to developers
+
+
 
 
 
