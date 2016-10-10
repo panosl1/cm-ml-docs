@@ -1,0 +1,620 @@
+\documentclass[]{article}
+
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsmath}
+
+\usepackage{ifxetex,ifluatex}
+
+\usepackage{fixltx2e} % provides \textsubscript
+
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+
+  \usepackage[T1]{fontenc}
+
+  \usepackage[utf8]{inputenc}
+
+\else % if luatex or xelatex
+
+  \ifxetex
+
+    \usepackage{mathspec}
+
+  \else
+
+    \usepackage{fontspec}
+
+  \fi
+
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
+\fi
+
+% use upquote if available, for straight quotes in verbatim environments
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+% use microtype if available
+
+\IfFileExists{microtype.sty}{%
+
+\usepackage{microtype}
+
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+
+}{}
+
+\usepackage[unicode=true]{hyperref}
+
+\hypersetup{
+
+            pdfborder={0 0 0},
+
+            breaklinks=true}
+
+\urlstyle{same}  % don't use monospace font for urls
+
+\usepackage{longtable,booktabs}
+
+\IfFileExists{parskip.sty}{%
+
+\usepackage{parskip}
+
+}{% else
+
+\setlength{\parindent}{0pt}
+
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\providecommand{\tightlist}{%
+
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setcounter{secnumdepth}{0}
+
+% Redefines (sub)paragraphs to behave more like sections
+
+\ifx\paragraph\undefined\else
+
+\let\oldparagraph\paragraph
+
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+
+\fi
+
+\ifx\subparagraph\undefined\else
+
+\let\oldsubparagraph\subparagraph
+
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+
+\fi
+
+
+
+\date{}
+
+
+
+\begin{document}
+
+
+
+\section{Installing the Machine Learning
+
+RPMs}\label{installing-the-machine-learning-rpms}
+
+
+
+As of Bright Cluster Manager 7.3 a number of Machine/Deep Learning
+
+librariy and framework RPM packages have been included. Bright makes it
+
+faster and easier for organizations to gain actionable insights from
+
+rich, complex data using the latest, state-of-the-art libraries with
+
+minimal effort during installation.
+
+
+
+Currently the following RPMs are available:
+
+
+
+\begin{longtable}[]{@{}ll@{}}
+
+\toprule
+
+\begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
+
+Package name\strut
+
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright\strut
+
+Description\strut
+
+\end{minipage}\tabularnewline
+
+\midrule
+
+\endhead
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+cm-ml-distdeps\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+Meta-package containing library dependencies available from the base
+
+Linux distribution repositories as well as the EPEL repository\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+cm-ml-pythondeps\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+Pre-packaged Python dependencies for Bright's RPM packages\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+caffe\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+A deep learning framework made with expression, speed, and modularity in
+
+mind.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+torch7\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+A library in C++ for developing Open Source speech and machine learning
+
+applications.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+theano\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+Theano is a Python library that allows you to define, optimize, and
+
+evaluate mathematical expressions involving multi-dimensional arrays
+
+efficiently.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+tensorflow\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+TensorFlow is an Open Source Software Library for Machine
+
+Intelligence\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+cudnn\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+A GPU-accelerated library of primitives for deep neural networks.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+cub\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+Reusable software components for CUDA\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+nccl\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+(pronounced ``Nickel'') A stand-alone library of standard collective
+
+communication routines, such as all-gather, reduce, broadcast, etc.,
+
+that have been optimized to achieve high bandwidth over PCIe.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+mlpython\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+MLPython is a library for organizing machine learning research.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+DIGITS\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+A web frontend to Caffe and Torch developed by NVIDIA\strut
+
+\end{minipage}\tabularnewline
+
+\bottomrule
+
+\end{longtable}
+
+
+
+The following package will be added in the future:
+
+
+
+\begin{longtable}[]{@{}ll@{}}
+
+\toprule
+
+\begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
+
+Package name\strut
+
+\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\raggedright\strut
+
+Description\strut
+
+\end{minipage}\tabularnewline
+
+\midrule
+
+\endhead
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+caffeonspark\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+CaffeOnSpark brings deep learning to Hadoop and Spark clusters. By
+
+combining salient features from deep learning framework Caffe and
+
+big-data frameworks Apache Spark and Apache Hadoop, CaffeOnSpark enables
+
+distributed deep learning on a cluster of GPU and CPU servers.\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+cntk\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+The Computational Network Toolkit by Microsoft Research, is a unified
+
+deep-learning toolkit\strut
+
+\end{minipage}\tabularnewline
+
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+
+bidmach\strut
+
+\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+
+BIDMach is a very fast machine learning library.\strut
+
+\end{minipage}\tabularnewline
+
+\bottomrule
+
+\end{longtable}
+
+
+
+\subsection{Requirements}\label{requirements}
+
+
+
+The folowing requirements must be met before installing the Machine
+
+Learning packages
+
+
+
+\begin{itemize}
+
+\tightlist
+
+\item
+
+  RHEL, Centos or Scientic Linux 7.x
+
+\item
+
+  Access to the Linux distribution's online YUM repositories as well the
+
+  EPEL repository
+
+\item
+
+  2 GB of free space for the RPMs that are installed on the headnode and
+
+  an additional 400 MB for each software image that will be used for
+
+  running Machine Laraning pipelines
+
+\item
+
+  (Recommended) Maxwell or more recent NVIDIA GPUs with compute
+
+  capability 3.5 or later
+
+\end{itemize}
+
+
+
+\subsection{Installation}\label{installation}
+
+
+
+\subsubsection{For the compute nodes}\label{for-the-compute-nodes}
+
+
+
+The only RPM that needs to be installed on the headnode is
+
+cm-ml-distdeps. This is is a meta-package the instructs YUM to install
+
+the necessary system libraries as well as the development packages
+
+e.g.~blas-devel. If for example the name of the software image is
+
+gpu-image, you can install the RPM by running the following command:
+
+
+
+\begin{verbatim}
+
+
+
+yum install --installroot=/cm/images/gpu-image cm-ml-distdeps
+
+\end{verbatim}
+
+
+
+You will need to repeat the above command for all software images that
+
+will be used to run Machine Learning applications.
+
+
+
+\subsubsection{For the headnode}\label{for-the-headnode}
+
+
+
+The Bright Cluster Manager Machine learning packages have proper RPM
+
+dependencies defined. This means that the cluster administrator does not
+
+need to spend time figuring out what needs to be installed.
+
+
+
+For example, if the administrator wants to install NVIDIA DIGITS, all
+
+that has to be done is to run the command:
+
+
+
+\begin{verbatim}
+
+
+
+yum install digits
+
+yum install <name of desired package>
+
+\end{verbatim}
+
+
+
+on the headnode. YUM will automaticall install cm-ml-pythondeps,
+
+cm-ml-distdeps, cudnn, caffe, torch and cuda75-toolkit as dependencies.
+
+These RPMs get installed in the /cm/shared directory, which is exported
+
+over NFS and therefore are available to all the compute nodes. This
+
+allows the installation of the Machine Learning libraries within
+
+minutes, instead of days that it typically takes to build and install
+
+all the necessary dependencies.
+
+
+
+\subsubsection{Friendly to developers}\label{friendly-to-developers}
+
+
+
+Developers that work on extended the aforementioned libraries will not
+
+want to use the pre-packages RPMs. For this use-case, Bright can help
+
+minimize the time spent to get started.
+
+
+
+By installing the cm-ml-pythondeps, cm-ml-distdeps (on the headnode and
+
+compute nodes) and cudnn RPM packages you can get ready for Machine
+
+Learning development within minutes and spend time on the instresting
+
+application at hand, instead of the copious procedure of satisfying
+
+dependencies.
+
+
+
+\subsection{Using the Machine Learning
+
+packages}\label{using-the-machine-learning-packages}
+
+
+
+Bright provides environment module definitions for all the Machine
+
+Learning packages. The environmenment module files are also compatible
+
+with Lmod that was introduced in 7.3.
+
+
+
+The Machine Learning environment modules automatically load additional
+
+environment modules as dependencies.
+
+
+
+For example, loading the DIGITS module with:
+
+
+
+\begin{verbatim}
+
+
+
+module load shared digits
+
+\end{verbatim}
+
+
+
+will automatically load additional modules such cudnn, openblas,
+
+hdf5\_18 etc. that are necessary in order to use DIGITS:
+
+
+
+\begin{verbatim}
+
+[root@nwtr-centos7 ~]# module list
+
+Currently Loaded Modulefiles:
+
+  1) shared
+
+\end{verbatim}
+
+
+
+\begin{verbatim}
+
+
+
+[root@nwtr-centos7 ~]# module load shared digits
+
+[root@nwtr-centos7 ~]# module list
+
+Currently Loaded Modulefiles:
+
+  1) shared                    3) cudnn/5.0                 5) cuda75/toolkit/7.5.18     7) caffe/0.16                9) digits/4.0
+
+  2) cm-ml-pythondeps/1.10.0   4) openblas/dynamic/0.2.18   6) hdf5_18/1.8.17            8) torch7/7.0
+
+[root@nwtr-centos7 ~]#
+
+\end{verbatim}
+
+
+
+This is achived via the module definition files:
+
+
+
+\begin{verbatim}
+
+
+
+[root@nwtr-centos7 ~]# module show digits
+
+-------------------------------------------------------------------
+
+/cm/shared/modulefiles/digits/4.0:
+
+
+
+module-whatis    adds nVidia Deep Neural Network Library to your environment variables
+
+module           load caffe
+
+module           load torch7
+
+module           load cm-ml-pythondeps
+
+module           load cudnn
+
+module           load openblas
+
+module           load cuda75/toolkit
+
+module           load hdf5_18
+
+prepend-path     PATH /cm/shared/apps/digits/4.0/
+
+-------------------------------------------------------------------
+
+
+
+[root@nwtr-centos7 ~]#
+
+\end{verbatim}
+
+
+
+\subsection{Further reading}\label{further-reading}
+
+
+
+Additional infirmation about the isage of each individual framework can
+
+be found in the user manual.
+
+
+
+\end{document}
+
