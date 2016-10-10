@@ -130,7 +130,9 @@ prepend-path     PATH /cm/shared/apps/digits/4.0/
 
 ```
 
+## Further reading
 
+Additional infirmation about the isage of each individual framework can be found in the user manual.
 
 
 
