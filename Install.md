@@ -39,8 +39,13 @@ The folowing requirements must be met before installing the Machine Learning pac
 
 ### For the compute nodes
 
-The only RPM that needs to be installed on the headnode is cm-ml-distdeps. This is is a meta-package the instructs YUM to install the necessary system libraries as well as the development packages e.g. blas-devel.
+The only RPM that needs to be installed on the headnode is cm-ml-distdeps. This is is a meta-package the instructs YUM to install the necessary system libraries as well as the development packages e.g. blas-devel. If for example the name of the software image is gpu-image, you can install the RPM by running the following command:
 
+```
+
+yum install --installroot=/cm/images/gpu-image cm-ml-distdeps
+
+```
 
 
 
