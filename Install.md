@@ -67,6 +67,69 @@ on the headnode. YUM will automaticall install cm-ml-pythondeps, cm-ml-distdeps,
 
 ### Friendly to developers
 
+Developers that work on extended the aforementioned libraries will not want to use the pre-packages RPMs. For this use-case, Bright can help minimize the time spent to get started.
+
+By installing the cm-ml-pythondeps, cm-ml-distdeps (on the headnode and compute nodes) and cudnn RPM packages you can get ready for Machine Learning development within minutes and spend time on the instresting application at hand, instead of the copious procedure of satisfying dependencies.
+
+## Using the Machine Learning packages
+
+
+Bright provides environment module definitions for all the Machine Learning packages. The environmenment module files are also compatible with Lmod that was introduced in 7.3.
+
+The Machine Learning environment modules automatically load additional environment modules as dependencies.
+
+For example, loading the DIGITS module with:
+
+```
+
+module load shared digits
+
+```
+
+will automatically load additional modules such cudnn, openblas, hdf5_18 etc. that are necessary in order to use DIGITS:
+
+
+```
+[root@nwtr-centos7 ~]# module list
+Currently Loaded Modulefiles:
+  1) shared
+
+```
+
+```
+
+[root@nwtr-centos7 ~]# module load shared digits
+[root@nwtr-centos7 ~]# module list
+Currently Loaded Modulefiles:
+  1) shared                    3) cudnn/5.0                 5) cuda75/toolkit/7.5.18     7) caffe/0.16                9) digits/4.0
+  2) cm-ml-pythondeps/1.10.0   4) openblas/dynamic/0.2.18   6) hdf5_18/1.8.17            8) torch7/7.0
+[root@nwtr-centos7 ~]#
+
+```
+
+This is achived via the module definition files:
+
+```
+
+[root@nwtr-centos7 ~]# module show digits
+-------------------------------------------------------------------
+/cm/shared/modulefiles/digits/4.0:
+
+module-whatis    adds nVidia Deep Neural Network Library to your environment variables
+module           load caffe
+module           load torch7
+module           load cm-ml-pythondeps
+module           load cudnn
+module           load openblas
+module           load cuda75/toolkit
+module           load hdf5_18
+prepend-path     PATH /cm/shared/apps/digits/4.0/
+-------------------------------------------------------------------
+
+[root@nwtr-centos7 ~]#
+
+```
+
 
 
 
