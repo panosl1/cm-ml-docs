@@ -1,7 +1,7 @@
 # Installing the Machine Learning RPMs
 
 
-As of Bright Cluster Manager 7.3 a number of Machine/Deep Learning librariy and framework RPM packages have been included.  Bright makes it faster and easier for organizations to gain actionable insights from rich, complex data using the latest, state-of-the-art libraries with minimal effort during installation.
+As of Bright Cluster Manager 7.3 a number of Machine/Deep Learning library and framework RPM packages have been included.  Bright makes it faster and easier for organizations to gain actionable insights from rich, complex data using the latest, state-of-the-art libraries with minimal effort during installation.
 
 Currently the following RPMs are available:
 
@@ -29,11 +29,11 @@ bidmach | BIDMach is a very fast machine learning library.
 
 ## Requirements
 
-The folowing requirements must be met before installing the Machine Learning packages
+The following requirements must be met before installing the Machine Learning packages
 
-* RHEL, Centos or Scientic Linux 7.x
+* RHEL, CentOS or Scientic Linux 7.x
 * Access to the Linux distribution's online YUM repositories as well the EPEL repository
-* 2 GB of free space for the RPMs that are installed on the headnode and an additional 400 MB for each software image that will be used for running Machine Laraning pipelines
+* 2 GB of free space for the RPMs that are installed on the headnode and an additional 400 MB for each software image that will be used for running Machine Learning pipelines
 * (Recommended) Maxwell or more recent NVIDIA GPUs with compute capability 3.5 or later
 
 ## Installation
@@ -63,18 +63,18 @@ yum install <name of desired package>
 
 ```
 
-on the headnode. YUM will automaticall install cm-ml-pythondeps, cm-ml-distdeps, cudnn, caffe, torch and cuda75-toolkit as dependencies. These RPMs get installed in the /cm/shared directory, which is exported over NFS and therefore are available to all the compute nodes. This allows the installation of the Machine Learning libraries within minutes, instead of days that it typically takes to build and install all the necessary dependencies.
+on the headnode. YUM will automatically install cm-ml-pythondeps, cm-ml-distdeps, cudnn, caffe, torch and cuda75-toolkit as dependencies. These RPMs get installed in the /cm/shared directory, which is exported over NFS and therefore are available to all the compute nodes. This allows the installation of the Machine Learning libraries within minutes, instead of days that it typically takes to build and install all the necessary dependencies.
 
 ### Friendly to developers
 
 Developers that work on extended the aforementioned libraries will not want to use the pre-packages RPMs. For this use-case, Bright can help minimize the time spent to get started.
 
-By installing the cm-ml-pythondeps, cm-ml-distdeps (on the headnode and compute nodes) and cudnn RPM packages you can get ready for Machine Learning development within minutes and spend time on the instresting application at hand, instead of the copious procedure of satisfying dependencies.
+By installing the cm-ml-pythondeps, cm-ml-distdeps (on the headnode and compute nodes) and cudnn RPM packages you can get ready for Machine Learning development within minutes and spend time on the interesting application at hand, instead of the copious procedure of satisfying dependencies.
 
 ## Using the Machine Learning packages
 
 
-Bright provides environment module definitions for all the Machine Learning packages. The environmenment module files are also compatible with Lmod that was introduced in 7.3.
+Bright provides environment module definitions for all the Machine Learning packages. The environment module files are also compatible with Lmod that was introduced in 7.3.
 
 The Machine Learning environment modules automatically load additional environment modules as dependencies.
 
@@ -107,7 +107,7 @@ Currently Loaded Modulefiles:
 
 ```
 
-This is achived via the module definition files:
+This is archived via the module definition files:
 
 ```
 
@@ -132,7 +132,7 @@ prepend-path     PATH /cm/shared/apps/digits/4.0/
 
 ## Further reading
 
-Additional infirmation about the isage of each individual framework can be found in the user manual.
+Additional information about the usage of each individual framework can be found in the user manual.
 
 
 
